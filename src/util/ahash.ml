@@ -1,5 +1,5 @@
 (** Modified version of the [Hashbtl] library, to work with types containing
-    functions. Physical equality is used when [Pervasives.compare] raises an
+    functions. Physical equality is used when [compare] raises an
     exception. Note that this is only used when the hash function leads to a
     collision (and thus quite rarely). *)
 
@@ -12,7 +12,7 @@ type ('a, 'b) t =
 
 (* Full comparision function (compares closures with physical equality). *)
 let compare x y =
-  try Pervasives.compare x y = 0 with _ -> x == y
+  try compare x y = 0 with _ -> x == y
 
 (* Creates a fresh, empty table. *)
 let create initial_size =

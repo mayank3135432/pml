@@ -1,5 +1,5 @@
 (** Modified version of the [Hashbtl] library, to work with types containing
-    functions. Physical equality is used when [Pervasives.compare] raises an
+    functions. Physical equality is used when [compare] raises an
     exception. Note that this is only used when the hash function leads to a
     collision (and thus quite rarely). *)
 
